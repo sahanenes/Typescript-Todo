@@ -12,7 +12,6 @@ const Home = () => {
     try {
       const { data } = await axios.get<TodoType[]>(url);
       setTodos(data);
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
