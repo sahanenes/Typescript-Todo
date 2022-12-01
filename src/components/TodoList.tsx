@@ -10,7 +10,7 @@ const TodoList: React.FC<ITodoList> = ({ todos, toggleTodo }) => {
   return (
     <ul>
       {todos.map((todo) => (
-        <TodoListItem key={todo.id} todo={todo} />
+        <TodoListItem key={todo.id} todo={todo} toggleTodo={toggleTodo} />
       ))}
     </ul>
   );

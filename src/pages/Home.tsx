@@ -32,7 +32,7 @@ const Home = () => {
   const toggleTodo: ToggleFn = async (todo) => {
     try {
       await axios.put(`${url}/${todo.id}`, { ...todo, isDone: !todo.isDone });
-      getTodos;
+      getTodos();
     } catch (error) {
       console.log(error);
     }
