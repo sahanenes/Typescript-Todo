@@ -3,3 +3,5 @@ interface TodoType {
   task: string;
   isDone: boolean;
 }
+
+type AddFunction = (text: string) => void;
