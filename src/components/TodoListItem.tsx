@@ -3,8 +3,13 @@ import React from "react";
 interface ITodoListItem {
   todo: TodoType;
   toggleTodo: ToggleFn;
+  deleteTodo: DeleteFn;
 }
-const TodoListItem: React.FC<ITodoListItem> = ({ todo, toggleTodo }) => {
+const TodoListItem: React.FC<ITodoListItem> = ({
+  todo,
+  toggleTodo,
+  deleteTodo,
+}) => {
   return (
     <li>
       {todo.isDone ? (
@@ -14,7 +19,9 @@ const TodoListItem: React.FC<ITodoListItem> = ({ todo, toggleTodo }) => {
       ) : (
         <p onClick={() => toggleTodo(todo)}> {todo.task} </p>
       )}
-      <span className="task-icons">✖️</span>
+      <span onClick={() => deleteTodo(todo.id)} className="task-icons">
+        ✖️
+      </span>
     </li>
   );
 };

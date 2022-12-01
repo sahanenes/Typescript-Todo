@@ -7,3 +7,5 @@ interface TodoType {
 type AddFunction = (text: string) => void;
 
 type ToggleFn = (todo: TodoType) => void;
+
+type DeleteFn = (id: string | number) => void;
